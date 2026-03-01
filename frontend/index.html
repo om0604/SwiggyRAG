@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiggy Annual Report AI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-file-invoice-dollar"></i>
+            </div>
+            <h1>Swiggy Annual Report Intelligence Engine</h1>
+            <p class="subtitle">Source-backed insights from Swiggy’s FY23 financial report.</p>
+            <p class="badge">RAG-Powered | Source-Grounded Answers</p>
+        </header>
+
+        <main>
+            <div class="search-container card-shadow">
+                <div class="input-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="question-input"
+                        placeholder="e.g., What were Swiggy’s key revenue drivers in FY23?" autofocus>
+                    <button id="submit-btn"><i class="fas fa-search"></i> <span>Analyze</span></button>
+                </div>
+
+                <div class="quick-prompts">
+                    <span>Suggested Questions:</span>
+                    <button class="prompt-btn" data-query="What were Swiggy’s key revenue drivers?">What were Swiggy’s
+                        key revenue drivers?</button>
+                    <button class="prompt-btn" data-query="How did operating losses change in FY23?">How did operating
+                        losses change in FY23?</button>
+                    <button class="prompt-btn" data-query="What risks did the company highlight?">What risks did the
+                        company highlight?</button>
+                </div>
+            </div>
+
+            <div id="loading" class="hidden">
+                <div class="loading-animation">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+                <p class="loading-text" id="loading-status">Retrieving relevant sections...</p>
+            </div>
+
+            <div id="results-container" class="hidden">
+                <div class="answer-card card-shadow outline-border">
+                    <div class="answer-header">
+                        <h3><i class="fas fa-sparkles"></i> Answer</h3>
+                    </div>
+                    <div id="answer-text"></div>
+
+                    <div id="sources-summary" class="sources-list hidden">
+                        <!-- Sources list will be injected here -->
+                    </div>
+                </div>
+
+                <div class="context-card card-shadow">
+                    <button id="toggle-context" class="toggle-btn">
+                        <span><i class="fas fa-search-plus"></i> View Supporting Context</span>
+                        <i class="fas fa-chevron-down caret"></i>
+                    </button>
+                    <div id="context-content" class="hidden">
+                        <!-- Context chunk extracts injected here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="tech-stack">Powered by FastAPI &bull; FAISS &bull; Sentence Transformers &bull; Groq LLaMA 3.1
+            </div>
+            <div class="admin-controls">
+                <button id="rebuild-btn" class="settings-btn" title="Refresh Knowledge Base"><i class="fas fa-sync"></i>
+                    Refresh Knowledge Base</button>
+            </div>
+        </footer>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
