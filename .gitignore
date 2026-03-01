@@ -1,0 +1,20 @@
+# Environments
+.env
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# FAISS Vectors & Pickles (optional if you don't want to commit the generated vector DB)
+# faiss_index.index
+# metadata.pkl
+
+# VS Code / IDEs
+.vscode/
+.idea/
