@@ -47,7 +47,6 @@ Open the new `.env` file and replace the placeholder with your actual Groq API k
 LLM_PROVIDER=groq
 GROQ_API_KEY=your_groq_api_key_here
 ```
-*(Note: `.env` is included in `.gitignore` to keep your private keys secure and prevent them from being pushed to GitHub).*
 
 ### 3. Run the Backend API
 ```bash
